@@ -1,47 +1,38 @@
 #include<stdio.h>
-struct _fraction
+int input_n_and_r(int *n,int *r)
 {
-  int num,den;
-};
-typedef _fraction fraction;
-fraction input_fraction()
-{
-  fraction f;
-  printf("Enter the value of fraction\n");
-  scanf("%d %d",&f.num,&f.den);
-  return f;
+  printf("Enter the value of n: ");
+  scanf("%d",n);
+  printf("Enter the value of r :");
+  scanf("%d",r);
 }
-fraction largest_fraction(fraction f1,fraction f2,fraction f3)
+int ncr(int n,int r)
 {
-  int sden=f1.den*f2.den*f3.den;
-  int a,b,c;
-  a=f1.num*sden/f1.den;
-  b=f2.num*sden/f2.den;
-  c=f3.num*sden/f3.den;
-  if (a>b && a>c)
-  {
-    return f1;
-  }
-  else if(b>c)
-  {
-    return f2;
-  }
-  else
-  {
-    return f3;
-  }
+  int nfact=1,rfact=1,nrfact=1,ncr;     //nrfact is for (n-r)!
+  for(int i=1;i<=n;i++)
+    {
+      nfact*=i;
+    }
+  for(int j=1;j<=r;j++)
+    {
+      rfact*=j;
+    }
+  for(int k=1;k<=(n-r);k++)
+    {
+      nrfact*=k;
+    }
+  ncr=nfact/(rfact*nrfact);
+  return ncr;
 }
-void output(fraction f1,fraction f2,fraction f3,fraction largest)
+void output(int n,int r,int result)
 {
-  printf("The largest of three fractions is %d/%d\n",largest.num,largest.den);
+  printf("The factorial of %d and %d is %d",n,r,result);
 }
 int main()
 {
-  fraction f1,f2,f3,largest;
-  f1=input_fraction();
-  f2=input_fraction();
-  f3=input_fraction();
-  largest=largest_fraction(f1,f2,f3);
-  output(f1,f2,f3,largest);
-  return 0
+  int a,b,result;
+  input_n_and_r(&a,&b);
+  result=ncr(a,b);
+  output(a,b,result);
+  return 0;
 }
