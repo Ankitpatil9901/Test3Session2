@@ -8,7 +8,7 @@ int input_n_and_r(int *n,int *r)
 }
 int ncr(int n,int r)
 {
-  int nfact=1,rfact=1,nrfact=1,ncr;     //nrfact is for (n-r)!
+  int nfact=1,rfact=1,nrfact=1,ncr;     
   for(int i=1;i<=n;i++)
     {
       nfact*=i;

@@ -1,1 +1,178 @@
+ gcc -g p4final.c
+ gdb ./a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x955: file p4final.c, line 51.
+(gdb) r
+Starting program: /home/runner/Test3Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p4final.c:51
+51  {
+(gdb) n
+53    deg=input_degree();
+(gdb) s
+input_degree () at p4final.c:4
+4   {
+(gdb) n
+6     printf("Enter the degree of the polynomial:");
+(gdb) n
+7     scanf("%d",&a);
+(gdb) n
+Enter the degree of the polynomial:5
+8     return a;
+(gdb) n
+9   }
+(gdb) n
+main () at p4final.c:54
+54    x=input_x();
+(gdb) s
+input_x () at p4final.c:12
+12  {
+(gdb) n
+14    printf("Enter the value of x:");
+(gdb) n
+15    scanf("%f",&x);
+(gdb) n
+Enter the value of x:4
+16    return x;
+(gdb) n
+17  }
+(gdb) n
+main () at p4final.c:55
+55    float a[deg];
+(gdb) s
+56    input_coefficients(deg,a);
+(gdb) s
+input_coefficients (n=5, a=0x7fff5defb760) at p4final.c:22
+22    for(i=n;i>=0;i--)
+(gdb) n
+24        printf("Enter the coefficient of X^%d:",i);
+(gdb) n
+25        scanf("%f",&a[i]);
+(gdb) n
+Enter the coefficient of X^5:1
+22    for(i=n;i>=0;i--)
+(gdb) n
+24        printf("Enter the coefficient of X^%d:",i);
+(gdb) n
+25        scanf("%f",&a[i]);
+(gdb) n
+Enter the coefficient of X^4:4
+22    for(i=n;i>=0;i--)
+(gdb) n
+24        printf("Enter the coefficient of X^%d:",i);
+(gdb) n
+25        scanf("%f",&a[i]);
+(gdb) n
+Enter the coefficient of X^3:4
+22    for(i=n;i>=0;i--)
+(gdb) n
+24        printf("Enter the coefficient of X^%d:",i);
+(gdb) n
+25        scanf("%f",&a[i]);
+(gdb) n
+Enter the coefficient of X^2:3
+22    for(i=n;i>=0;i--)
+(gdb) n
+24        printf("Enter the coefficient of X^%d:",i);
+(gdb) n
+25        scanf("%f",&a[i]);
+(gdb) n
+Enter the coefficient of X^1:2
+22    for(i=n;i>=0;i--)
+(gdb) n
+24        printf("Enter the coefficient of X^%d:",i);
+(gdb) n
+25        scanf("%f",&a[i]);
+(gdb) n
+Enter the coefficient of X^0:2
+22    for(i=n;i>=0;i--)
+(gdb) n
+27  }
+(gdb) n
+main () at p4final.c:57
+57    result=evaluate_polynomial(deg,a,x);
+(gdb) s
+evaluate_polynomial (n=5, a=0x7fff5defb760, x=4) at p4final.c:31
+31    int i,sum=0;
+(gdb) n
+32    for(i=n;i>0;i--)
+(gdb) n
+34        sum=(sum+a[i])*x;
+(gdb) n
+32    for(i=n;i>0;i--)
+(gdb) n
+34        sum=(sum+a[i])*x;
+(gdb) n
+32    for(i=n;i>0;i--)
+(gdb) n
+34        sum=(sum+a[i])*x;
+(gdb) n
+32    for(i=n;i>0;i--)
+(gdb) n
+34        sum=(sum+a[i])*x;
+(gdb) n
+32    for(i=n;i>0;i--)
+(gdb) n
+34        sum=(sum+a[i])*x;
+(gdb) n
+32    for(i=n;i>0;i--)
+(gdb) n
+36    sum+=a[0];
+(gdb) n
+37    return sum;
+(gdb) n
+38  }
+(gdb) n
+main () at p4final.c:58
+58    out_put(deg,a,x,result);
+(gdb) s
+out_put (n=5, a=0x7fff5defb760, x=4, result=2362) at p4final.c:43
+43    for(i=0;i<n;i++)
+(gdb) n
+45        printf("%f*x^%d+",a[i],i);
+(gdb) n
+43    for(i=0;i<n;i++)
+(gdb) n
+45        printf("%f*x^%d+",a[i],i);
+(gdb) n
+43    for(i=0;i<n;i++)
+(gdb) n
+45        printf("%f*x^%d+",a[i],i);
+(gdb) n
+43    for(i=0;i<n;i++)
+(gdb) n
+45        printf("%f*x^%d+",a[i],i);
+(gdb) n
+43    for(i=0;i<n;i++)
+(gdb) n
+45        printf("%f*x^%d+",a[i],i);
+(gdb) n
+43    for(i=0;i<n;i++)
+(gdb) n
+47    printf("%f*x^%d at %f is %f",a[n],n,x,result);
+(gdb) n
+48  }
+(gdb) n
+main () at p4final.c:59
+59  }(gdb) q
+A debugging session is active.
+
+    Inferior 1 [process 516] will be killed.
+
+Quit anyway? (y or n) y
