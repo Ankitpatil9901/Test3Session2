@@ -1,1 +1,136 @@
+ gcc -g p7final.c
+ gdb ./a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from ./a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x8a7: file p7final.c, line 54.
+(gdb) r
+Starting program: /home/runner/Test3Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p7final.c:54
+54    f1=input_fraction();
+(gdb) s
+input_fraction () at p7final.c:9
+9   {
+(gdb) n
+11    printf("Enter the numerator: ");
+(gdb) n
+12    scanf("%d",&f.num);
+(gdb) n
+Enter the numerator: 6
+13    printf("Enter the denominator: ");
+(gdb) n
+14    scanf("%d",&f.den);
+(gdb) n
+Enter the denominator: 8
+15    return f;
+(gdb) n
+16  }
+(gdb) n
+main () at p7final.c:55
+55    f2=input_fraction();
+(gdb) s
+input_fraction () at p7final.c:9
+9   {
+(gdb) n
+11    printf("Enter the numerator: ");
+(gdb) n
+12    scanf("%d",&f.num);
+(gdb) n
+Enter the numerator: 8
+13    printf("Enter the denominator: ");
+(gdb) 9
+Undefined command: "9".  Try "help".
+(gdb) n
+14    scanf("%d",&f.den);
+(gdb) n
+Enter the denominator: 5
+15    return f;
+(gdb) 8
+Undefined command: "8".  Try "help".
+(gdb) n
+16  }
+(gdb) n
+main () at p7final.c:56
+56    gcd=find_gcd(f1.den,f2.den);
+(gdb) s
+find_gcd (a=8, b=5) at p7final.c:20
+20      for(i=1;i<=a && i<=b;i++)
+(gdb) n
+22          if(a%i==0 && b%i==0)
+(gdb) n
+24            gcd=i;
+(gdb) n
+20      for(i=1;i<=a && i<=b;i++)
+(gdb) n
+22          if(a%i==0 && b%i==0)
+(gdb) n
+20      for(i=1;i<=a && i<=b;i++)
+(gdb) n
+22          if(a%i==0 && b%i==0)
+(gdb) n
+20      for(i=1;i<=a && i<=b;i++)
+(gdb) n
+22          if(a%i==0 && b%i==0)
+(gdb) n
+20      for(i=1;i<=a && i<=b;i++)
+(gdb) n
+22          if(a%i==0 && b%i==0)
+(gdb) n
+20      for(i=1;i<=a && i<=b;i++)
+(gdb) n
+28    return gcd;
+(gdb) n
+29  }
+(gdb) n
+main () at p7final.c:57
+57    f3=add_fractions(f1,f2,gcd);
+(gdb) s
+add_fractions (f1=..., f2=..., gcd=1) at p7final.c:35
+35    lcm=(f1.den*f2.den)/gcd;
+(gdb) n
+36    multi1=lcm/f1.den;
+(gdb) n
+37    multi2=lcm/f2.den;
+(gdb) n
+38    num1=f1.num*multi1;
+(gdb) n
+39    num2=f2.num*multi2;
+(gdb) n
+40    f3.num=num1+num2;
+(gdb) n
+41    f3.den=lcm;
+(gdb) n
+42    return f3;
+(gdb) n
+43  }
+(gdb) n
+main () at p7final.c:58
+58    output(f1,f2,f3);
+(gdb) s
+output (f1=..., f2=..., f3=...) at p7final.c:47
+47    printf("The sum of fractions %d/%d and %d/%d is: %d/%d.",f1.num,f1.den,f2.num,f2.den,f3.num,f3.den);
+(gdb) n
+48  }
+(gdb) n
+main () at p7final.c:59
+59  }(gdb) q
+A debugging session is active.
+
+    Inferior 1 [process 74] will be killed.
+
+Quit anyway? (y or n) y
