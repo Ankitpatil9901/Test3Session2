@@ -1,4 +1,4 @@
- gcc -g p2final.c
+ gcc -g p2final.c
  gdb ./a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -49,8 +49,8 @@ input_fraction () at p2final.c:7
 enter the fraction
 10    scanf("%d%d",&f.num,&f.den);
 (gdb) n
-5
-4
+8
+7
 11    return f;
 (gdb) n
 12  }
@@ -66,9 +66,8 @@ input_fraction () at p2final.c:7
 enter the fraction
 10    scanf("%d%d",&f.num,&f.den);
 (gdb) n
-
-8
 9
+7
 11    return f;
 (gdb) n
 12  }
@@ -89,7 +88,7 @@ Largest_fraction (f1=..., f2=..., f3=...) at p2final.c:16
 (gdb) n
 24    else if(b>c && b>a)
 (gdb) n
-26      return f2; 
+30      return f3;
 (gdb) n
 32  }
 (gdb) n
@@ -107,6 +106,6 @@ main () at p2final.c:45
 46    }(gdb) q
 A debugging session is active.
 
-    Inferior 1 [process 1079] will be killed.
+    Inferior 1 [process 384] will be killed.
 
 Quit anyway? (y or n) y
