@@ -56,4 +56,5 @@ int main()
   input_coefficients(deg,a);
   result=evaluate_polynomial(deg,a,x);
   out_put(deg,a,x,result);
+  return 0;
 }

@@ -33,7 +33,8 @@ input_degree () at p4final.c:4
 (gdb) n
 7     scanf("%d",&a);
 (gdb) n
-Enter the degree of the polynomial:5
+Enter the degree of the polynomial: 
+5
 8     return a;
 (gdb) n
 9   }
@@ -48,7 +49,7 @@ input_x () at p4final.c:12
 (gdb) n
 15    scanf("%f",&x);
 (gdb) n
-Enter the value of x:4
+Enter the value of x:8
 16    return x;
 (gdb) n
 17  }
@@ -58,14 +59,14 @@ main () at p4final.c:55
 (gdb) s
 56    input_coefficients(deg,a);
 (gdb) s
-input_coefficients (n=5, a=0x7fff5defb760) at p4final.c:22
+input_coefficients (n=5, a=0x7ffde8418300) at p4final.c:22
 22    for(i=n;i>=0;i--)
 (gdb) n
 24        printf("Enter the coefficient of X^%d:",i);
 (gdb) n
 25        scanf("%f",&a[i]);
 (gdb) n
-Enter the coefficient of X^5:1
+Enter the coefficient of X^5:6
 22    for(i=n;i>=0;i--)
 (gdb) n
 24        printf("Enter the coefficient of X^%d:",i);
@@ -100,7 +101,7 @@ Enter the coefficient of X^1:2
 (gdb) n
 25        scanf("%f",&a[i]);
 (gdb) n
-Enter the coefficient of X^0:2
+Enter the coefficient of X^0:1
 22    for(i=n;i>=0;i--)
 (gdb) n
 27  }
@@ -108,7 +109,7 @@ Enter the coefficient of X^0:2
 main () at p4final.c:57
 57    result=evaluate_polynomial(deg,a,x);
 (gdb) s
-evaluate_polynomial (n=5, a=0x7fff5defb760, x=4) at p4final.c:31
+evaluate_polynomial (n=5, a=0x7ffde8418300, x=8) at p4final.c:31
 31    int i,sum=0;
 (gdb) n
 32    for(i=n;i>0;i--)
@@ -142,7 +143,7 @@ evaluate_polynomial (n=5, a=0x7fff5defb760, x=4) at p4final.c:31
 main () at p4final.c:58
 58    out_put(deg,a,x,result);
 (gdb) s
-out_put (n=5, a=0x7fff5defb760, x=4, result=2362) at p4final.c:43
+out_put (n=5, a=0x7ffde8418300, x=8, result=215249) at p4final.c:43
 43    for(i=0;i<n;i++)
 (gdb) n
 45        printf("%f*x^%d+",a[i],i);
@@ -173,6 +174,5 @@ main () at p4final.c:59
 59  }(gdb) q
 A debugging session is active.
 
-    Inferior 1 [process 516] will be killed.
+    Inferior 1 [process 512] will be killed.
 
-Quit anyway? (y or n) y
