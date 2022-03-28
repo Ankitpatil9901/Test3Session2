@@ -1,38 +1,31 @@
 #include <stdio.h>
-#include<string.h>
-void input_string(char *a)
-{
-  int *x;
-  printf("Enter the String ");
-  scanf("%d",x);
+#include <string.h>
+void input_string(char a[])
+{ 
+  printf("Enter a line of text:-\n");
+  fgets(a,100,stdin);
 }
-
-int count_words(char *string)
+int count_words(char a[])
 {
-  int i,n,c=0;
-  for(i=0;i>n;i++)
-   {
-     if (a[i] == ' ')
-     {
-         c++;
-       }
-     } else 
-    {
-       count_word = 1;
-      }
-  } 
-  return c;
+  int i=0;
+  char *temp=strtok(a," ");
+  while(temp!=NULL)
+  {
+    i=i+1;
+    temp=strtok(NULL," ");
+  }
+  return i;
 }
-void output(char a,int no_words)
+void output(char a[], int no_words)
 {
-  printf("Number of words in string is:%d",count_word(str));
+  printf("%d",no_words);
 }
-
 int main()
 {
-  char str[1024];
-  input_string(&a);
-  count_words(&string);
-  output(string,no_words);  
+  int n;
+  char a[100],string[100];
+  input_string(a);
+  n=count_words(a);
+  output(a,n);
   return 0;
-  }
+}
