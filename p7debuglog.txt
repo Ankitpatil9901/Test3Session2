@@ -31,12 +31,12 @@ input_fraction () at p7final.c:9
 (gdb) n
 12    scanf("%d",&f.num);
 (gdb) n
-Enter the numerator: 6
+Enter the numerator: 8
 13    printf("Enter the denominator: ");
 (gdb) n
 14    scanf("%d",&f.den);
 (gdb) n
-Enter the denominator: 8
+Enter the denominator: 9
 15    return f;
 (gdb) n
 16  }
@@ -51,24 +51,19 @@ input_fraction () at p7final.c:9
 (gdb) n
 12    scanf("%d",&f.num);
 (gdb) n
-Enter the numerator: 8
+Enter the numerator: n
 13    printf("Enter the denominator: ");
-(gdb) 9
-Undefined command: "9".  Try "help".
 (gdb) n
 14    scanf("%d",&f.den);
 (gdb) n
-Enter the denominator: 5
 15    return f;
-(gdb) 8
-Undefined command: "8".  Try "help".
 (gdb) n
 16  }
 (gdb) n
 main () at p7final.c:56
 56    gcd=find_gcd(f1.den,f2.den);
 (gdb) s
-find_gcd (a=8, b=5) at p7final.c:20
+find_gcd (a=9, b=9) at p7final.c:20
 20      for(i=1;i<=a && i<=b;i++)
 (gdb) n
 22          if(a%i==0 && b%i==0)
@@ -83,6 +78,18 @@ find_gcd (a=8, b=5) at p7final.c:20
 (gdb) n
 22          if(a%i==0 && b%i==0)
 (gdb) n
+24            gcd=i;
+(gdb) n
+20      for(i=1;i<=a && i<=b;i++)
+(gdb) nn
+Undefined command: "nn".  Try "help".
+(gdb) n
+22          if(a%i==0 && b%i==0)
+(gdb) n
+20      for(i=1;i<=a && i<=b;i++)
+(gdb) n
+22          if(a%i==0 && b%i==0)
+(gdb) n
 20      for(i=1;i<=a && i<=b;i++)
 (gdb) n
 22          if(a%i==0 && b%i==0)
@@ -90,6 +97,16 @@ find_gcd (a=8, b=5) at p7final.c:20
 20      for(i=1;i<=a && i<=b;i++)
 (gdb) n
 22          if(a%i==0 && b%i==0)
+(gdb) n
+20      for(i=1;i<=a && i<=b;i++)
+(gdb) n
+22          if(a%i==0 && b%i==0)
+(gdb) n
+20      for(i=1;i<=a && i<=b;i++)
+(gdb) n
+22          if(a%i==0 && b%i==0)
+(gdb) n
+24            gcd=i;
 (gdb) n
 20      for(i=1;i<=a && i<=b;i++)
 (gdb) n
@@ -100,7 +117,7 @@ find_gcd (a=8, b=5) at p7final.c:20
 main () at p7final.c:57
 57    f3=add_fractions(f1,f2,gcd);
 (gdb) s
-add_fractions (f1=..., f2=..., gcd=1) at p7final.c:35
+add_fractions (f1=..., f2=..., gcd=9) at p7final.c:35
 35    lcm=(f1.den*f2.den)/gcd;
 (gdb) n
 36    multi1=lcm/f1.den;
@@ -131,6 +148,6 @@ main () at p7final.c:59
 59  }(gdb) q
 A debugging session is active.
 
-    Inferior 1 [process 74] will be killed.
+    Inferior 1 [process 587] will be killed.
 
 Quit anyway? (y or n) y
