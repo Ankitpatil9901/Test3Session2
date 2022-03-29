@@ -43,7 +43,7 @@ main () at p5final.c:41
 (gdb) s
 42    input_array(n,a);
 (gdb) s
-input_array (n=5, a=0x7ffc6b91f7b0) at p5final.c:12
+input_array (n=5, a=0x7fffb8694620) at p5final.c:12
 12    printf("enter the array elements\n");
 (gdb) n
 enter the array elements
@@ -51,27 +51,23 @@ enter the array elements
 (gdb) n
 15     scanf("%d",&a[i]);
 (gdb) n
-8
+n
 13    for(i=0; i<n; i++)
 (gdb) n
 15     scanf("%d",&a[i]);
 (gdb) n
-7
 13    for(i=0; i<n; i++)
 (gdb) n
 15     scanf("%d",&a[i]);
 (gdb) n
-6
 13    for(i=0; i<n; i++)
 (gdb) n
 15     scanf("%d",&a[i]);
 (gdb) n
-9
 13    for(i=0; i<n; i++)
 (gdb) n
 15     scanf("%d",&a[i]);
 (gdb) n
-7
 13    for(i=0; i<n; i++)
 (gdb) n
 17  }
@@ -79,25 +75,13 @@ enter the array elements
 main () at p5final.c:43
 43    find_largest(n,a);
 (gdb) s
-find_largest (n=5, a=0x7ffc6b91f7b0) at p5final.c:20
+find_largest (n=5, a=0x7fffb8694620) at p5final.c:20
 20    int i,biggest=0,largest;
 (gdb) n
 21    for(i=0; i<n; i++)
 (gdb) n
 22        if(a[i]>biggest)
 (gdb) n
-24          biggest=a[i];
-(gdb) n
-25          largest=i;
-(gdb) n
-21    for(i=0; i<n; i++)
-(gdb) n
-22        if(a[i]>biggest)
-(gdb) n
-21    for(i=0; i<n; i++)
-(gdb) n
-22        if(a[i]>biggest)
-(gdb) n
 21    for(i=0; i<n; i++)
 (gdb) n
 22        if(a[i]>biggest)
@@ -105,6 +89,18 @@ find_largest (n=5, a=0x7ffc6b91f7b0) at p5final.c:20
 24          biggest=a[i];
 (gdb) n
 25          largest=i;
+(gdb) n
+21    for(i=0; i<n; i++)
+(gdb) n
+22        if(a[i]>biggest)
+(gdb) n
+24          biggest=a[i];
+(gdb) n
+25          largest=i;
+(gdb) n
+21    for(i=0; i<n; i++)
+(gdb) n
+22        if(a[i]>biggest)
 (gdb) n
 21    for(i=0; i<n; i++)
 (gdb) n
@@ -119,20 +115,15 @@ find_largest (n=5, a=0x7ffc6b91f7b0) at p5final.c:20
 main () at p5final.c:44
 44    out_put(n,a,largest);
 (gdb) s
-out_put (n=5, a=0x7ffc6b91f7b0, largest=32764) at p5final.c:35
+out_put (n=5, a=0x7fffb8694620, largest=32767) at p5final.c:35
 35    printf("largest is %d",largest);
 (gdb) n
 36  }
 (gdb) n
 main () at p5final.c:45
-45  }(gdb) n
-__libc_start_main (main=0x55f0fae008af <main>, argc=1, argv=0x7ffc6b91f908, 
-    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
-    stack_end=0x7ffc6b91f8f8) at ../csu/libc-start.c:344
-344 ../csu/libc-start.c: No such file or directory.
-(gdb) q
+45  }(gdb) q
 A debugging session is active.
 
-    Inferior 1 [process 266] will be killed.
+    Inferior 1 [process 89] will be killed.
 
 Quit anyway? (y or n) y
