@@ -1,36 +1,31 @@
-#include<stdio.h>
-
-void input_str(char *a)
-{
-  printf("Enter the string: ");
-  scanf("%s",a);
+#include <stdio.h>
+#include <string.h>
+void input_string(char a[])
+{ 
+  printf("Enter a line of text:-\n");
+  fgets(a,100,stdin);
 }
-
-int str_reverse(char *a,char *rev)
+int count_words(char a[])
 {
-  int i=0,len=0;
-  while(a[i]!=0)
-    {
-      len+=1;
-      i++;
-    }
-  int j=len-1;
-  for(int k=0;k<len;k++)
-    {
-      rev[k]=a[j];
-      j--;
-    }
+  int i=0;
+  char *temp=strtok(a," ");
+  while(temp!=NULL)
+  {
+    i=i+1;
+    temp=strtok(NULL," ");
+  }
+  return i;
 }
-
-void output(char *a,char *rev)
+void output(char a[], int no_words)
 {
-  printf("Reverse of the string %s is %s",a,rev);
+  printf("%d",no_words);
 }
-
 int main()
 {
-  char x[100],reverse[100];
-  input_str(x);
-  str_reverse(x,reverse);
-  output(x,reverse);
+  int n;
+  char a[100],string[100];
+  input_string(a);
+  n=count_words(a);
+  output(a,n);
+  return 0;
 }
