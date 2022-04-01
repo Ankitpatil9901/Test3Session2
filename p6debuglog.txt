@@ -1,5 +1,9 @@
  gcc -g p6final.c
- gdb ./a.out
+ ./a.out
+Enter the string: reva
+Reverse of the string reva is aver 
+ gcc -g p6final.c
+ gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
@@ -14,61 +18,101 @@ Find the GDB manual and other documentation resources online at:
 <http://www.gnu.org/software/gdb/documentation/>.
 For help, type "help".
 Type "apropos word" to search for commands related to "word"...
-Reading symbols from ./a.out...done.
+Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x87e: file p6final.c, line 24.
+Breakpoint 1 at 0x808: file p6final.c, line 31.
 (gdb) r
 Starting program: /home/runner/Test3Session2/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p6final.c:24
-24  {
+Breakpoint 1, main () at p6final.c:31
+31  {
 (gdb) n
-27    input_string(a);
+33    input_str(x);
 (gdb) s
-input_string (a=0x7ffeef009660 "") at p6final.c:5
-5     printf("Enter a line of text:-\n");
+input_str (a=0x7ffdeca9eca0 "\aW\021\033\205\177") at p6final.c:5
+5     printf("Enter the string: ");
 (gdb) n
-Enter a line of text:-
-6     fgets(a,100,stdin);
+6     scanf("%s",a);
 (gdb) n
-5
+Enter the string: reva
 7   }
 (gdb) n
-main () at p6final.c:28
-28    n=count_words(a);
+main () at p6final.c:34
+34    str_reverse(x,reverse);
 (gdb) s
-count_words (a=0x7ffeef009660 "5\n") at p6final.c:10
-10    int i=0;
+str_reverse (a=0x7ffdeca9eca0 "reva", rev=0x7ffdeca9ed10 "") at p6final.c:11
+11    int i=0,len=0;
 (gdb) n
-11    char *temp=strtok(a," ");
+12    while(a[i]!=0)
 (gdb) n
-12    while(temp!=NULL)
+14        len+=1;
 (gdb) n
-14      i=i+1;
+15        i++;
 (gdb) n
-15      temp=strtok(NULL," ");
+12    while(a[i]!=0)
 (gdb) n
-12    while(temp!=NULL)
+14        len+=1;
 (gdb) n
-17    return i;
+15        i++;
 (gdb) n
-18  }
+12    while(a[i]!=0)
 (gdb) n
-main () at p6final.c:29
-29    output(a,n);
+14        len+=1;
+(gdb) n
+15        i++;
+(gdb) n
+12    while(a[i]!=0)
+(gdb) n
+14        len+=1;
+(gdb) n
+15        i++;
+(gdb) n
+12    while(a[i]!=0)
+(gdb) n
+17    int j=len-1;
+(gdb) n
+18    for(int k=0;k<len;k++)
+(gdb) n
+20        rev[k]=a[j];
+(gdb) n
+21        j--;
+(gdb) n
+18    for(int k=0;k<len;k++)
+(gdb) n
+20        rev[k]=a[j];
+(gdb) n
+21        j--;
+(gdb) n
+18    for(int k=0;k<len;k++)
+(gdb) n
+20        rev[k]=a[j];
+(gdb) n
+21        j--;
+(gdb) n
+18    for(int k=0;k<len;k++)
+(gdb) n
+20        rev[k]=a[j];
+(gdb) n
+21        j--;
+(gdb) n
+18    for(int k=0;k<len;k++)
+(gdb) n
+23  }
+(gdb) n
+main () at p6final.c:35
+35    output(x,reverse);
 (gdb) s
-output (a=0x7ffeef009660 "5\n", no_words=1) at p6final.c:21
-21    printf("%d",no_words);
+output (a=0x7ffdeca9eca0 "reva", rev=0x7ffdeca9ed10 "aver") at p6final.c:27
+27    printf("Reverse of the string %s is %s",a,rev);
 (gdb) n
-22  }
+28  }
 (gdb) n
-main () at p6final.c:30
-30    return 0;
-(gdb) n
-31  }(gdb) q
+main () at p6final.c:36
+36  }(gdb) q
 A debugging session is active.
 
-    Inferior 1 [process 334] will be killed.
+    Inferior 1 [process 564] will be killed.
 
 Quit anyway? (y or n) y
+ 
